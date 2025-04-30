@@ -1,14 +1,15 @@
 using System.Linq;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class VicInjury: LegacyLibrsValues, IPaddingFixer
     {
 
-        [JsonProperty("victimSeqNum")] public string VictimSeqNum { get; set; } = "   ";
+        [JsonPropertyName("victimSeqNum")] public string VictimSeqNum { get; set; } = "   ";
 
-        [JsonProperty("injuryType")] public string InjuryType { get; set; } = " ";
+        [JsonPropertyName("injuryType")] public string InjuryType { get; set; } = " ";
         
         public VicInjury()
         {

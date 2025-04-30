@@ -1,50 +1,50 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
-using NibrsModels.Extensions;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class Arrestee: LegacyLibrsValues, IPaddingFixer
     {
 
-        [JsonProperty("arrestSeqNum")] public int? ArrestSeqNum { get; set; }
+        [JsonPropertyName("arrestSeqNum")] public int? ArrestSeqNum { get; set; }
 
-        [JsonProperty("arrestNumber")] public string ArrestNumber { get; set; } = "            ";
+        [JsonPropertyName("arrestNumber")] public string ArrestNumber { get; set; } = "            ";
 
-        [JsonProperty("arrTransactionNumber")] public string ArrTransactionNumber { get; set; } = "               ";
+        [JsonPropertyName("arrTransactionNumber")] public string ArrTransactionNumber { get; set; } = "               ";
 
-        [JsonProperty("arresteeName")] public string ArresteeName { get; set; } = "                    ";
+        [JsonPropertyName("arresteeName")] public string ArresteeName { get; set; } = "                    ";
 
-        [JsonProperty("arrestDate")] public DateTime? ArrestDate { get; set; }
+        [JsonPropertyName("arrestDate")] public DateTime? ArrestDate { get; set; }
 
-        [JsonProperty("arrestType")] public string ArrestType { get; set; } = " ";
+        [JsonPropertyName("arrestType")] public string ArrestType { get; set; } = " ";
 
-        [JsonProperty("multipleArresteeIndicator")]
+        [JsonPropertyName("multipleArresteeIndicator")]
         public string MultipleArresteeIndicator { get; set; } = "N";
 
-        [JsonProperty("age")] public string Age { get; set; }
-        [JsonProperty("estimatedAge")] public bool? EstimatedAge { get; set; }
+        [JsonPropertyName("age")] public string Age { get; set; }
+        [JsonPropertyName("estimatedAge")] public bool? EstimatedAge { get; set; }
 
-        [JsonProperty("dob")] public DateTime? DOB { get; set; }
+        [JsonPropertyName("dob")] public DateTime? DOB { get; set; }
 
-        [JsonProperty("sex")] public string Sex { get; set; } = " ";
-        [JsonProperty("gender")] public string Gender { get; set; } = "   ";
+        [JsonPropertyName("sex")] public string Sex { get; set; } = " ";
+        [JsonPropertyName("gender")] public string Gender { get; set; } = "   ";
         
-        [JsonProperty("race")] public string Race { get; set; } = " ";
+        [JsonPropertyName("race")] public string Race { get; set; } = " ";
 
-        [JsonProperty("ethnicity")] public string Ethnicity { get; set; } = " ";
+        [JsonPropertyName("ethnicity")] public string Ethnicity { get; set; } = " ";
 
-        [JsonProperty("residentStatus")] public string ResidentStatus { get; set; } = " ";
+        [JsonPropertyName("residentStatus")] public string ResidentStatus { get; set; } = " ";
 
-        [JsonProperty("dispositionUnder18")] public string DispositionUnder18 { get; set; } = " ";
+        [JsonPropertyName("dispositionUnder18")] public string DispositionUnder18 { get; set; } = " ";
 
-        [JsonProperty("clearanceIndicator")] public string ClearanceIndicator { get; set; } = " ";
+        [JsonPropertyName("clearanceIndicator")] public string ClearanceIndicator { get; set; } = " ";
 
-        [JsonProperty("arrestArmed")] public List<Weapon> ArrestArmed { get; set; } = new List<Weapon>();
+        [JsonPropertyName("arrestArmed")] public List<Weapon> ArrestArmed { get; set; } = new List<Weapon>();
 
-        [JsonProperty("arrestStatute")] public List<ArrStatute> ArrestStatute { get; set; } = new List<ArrStatute>();
+        [JsonPropertyName("arrestStatute")] public List<ArrStatute> ArrestStatute { get; set; } = new List<ArrStatute>();
 
         public Arrestee()
         {
@@ -72,7 +72,7 @@ namespace LibrsModels.Classes
         }
         public string PadArresteeAge(string age)
         {
-            if (age.IsNullBlankOrEmpty()) return "".PadR(3);
+            if (string.IsNullOrWhiteSpace(age)) return "".PadR(3);
             if (age.Contains('E'))
             {
                 return age.PadL(3, '0');

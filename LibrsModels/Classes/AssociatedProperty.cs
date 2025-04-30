@@ -1,42 +1,43 @@
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class AssociatedProperty : LegacyLibrsValues
     {
         
-        [JsonProperty("propertyLossType")]
+        [JsonPropertyName("propertyLossType")]
         public string PropertyLossType { get; set; }
         
-        [JsonProperty("propertyDescription")]
+        [JsonPropertyName("propertyDescription")]
         public string PropertyDescription { get; set; }
         
-        [JsonProperty("propertyValue")]
+        [JsonPropertyName("propertyValue")]
         public string PropertyValue { get; set; }
         
-        [JsonProperty("dateRecovered")]
+        [JsonPropertyName("dateRecovered")]
         public string DateRecovered { get; set; }
         
-        [JsonProperty("suspectedDrugType")]
+        [JsonPropertyName("suspectedDrugType")]
         public string SuspectedDrugType { get; set; }
         
-        [JsonProperty("estimatedDrugQty")]
+        [JsonPropertyName("estimatedDrugQty")]
         public string EstimatedDrugQty { get; set; }
         
-        [JsonProperty("typeDrugMeas")]
+        [JsonPropertyName("typeDrugMeas")]
         public string TypeDrugMeas { get; set; }
         
-        [JsonProperty("tyNum")]
+        [JsonPropertyName("tyNum")]
         public object ty_num { get; set; }
         
-        [JsonProperty("lars")]
+        [JsonPropertyName("lars")]
         public object la_rs { get; set; }
         
-        [JsonProperty("nibr")]
+        [JsonPropertyName("nibr")]
         public object nibr { get; set; }
         
-        [JsonProperty("nValProp")]
+        [JsonPropertyName("nValProp")]
         public int n_val_prop { get; set; }
 
         [JsonIgnore]

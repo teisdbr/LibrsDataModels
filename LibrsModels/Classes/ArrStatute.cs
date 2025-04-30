@@ -1,17 +1,18 @@
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class ArrStatute: LegacyLibrsValues, IPaddingFixer
     {
 
-        [JsonProperty("arrestConToOffense")] public string ArrestConToOffense { get; set; } = "               ";
+        [JsonPropertyName("arrestConToOffense")] public string ArrestConToOffense { get; set; } = "               ";
 
-        [JsonProperty("agencyAssignedNibrs")] public string AgencyAssignedNibrs { get; set; } = "   ";
+        [JsonPropertyName("agencyAssignedNibrs")] public string AgencyAssignedNibrs { get; set; } = "   ";
 
-        [JsonProperty("lrsNumber")] public string LrsNumber { get; set; } = "            ";
+        [JsonPropertyName("lrsNumber")] public string LrsNumber { get; set; } = "            ";
 
         [JsonIgnore]
         public bool? OfficerDidAssignNibrs { get; set; }

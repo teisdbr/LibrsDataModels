@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
-using NibrsModels.Extensions;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
@@ -31,40 +31,40 @@ namespace LibrsModels.Classes
 
         
 
-        [JsonProperty("victimSeqNum")] public int? VictimSeqNum { get; set; }
+        [JsonPropertyName("victimSeqNum")] public int? VictimSeqNum { get; set; }
 
-        [JsonProperty("victimType")] public string VictimType { get; set; } = " ";
+        [JsonPropertyName("victimType")] public string VictimType { get; set; } = " ";
 
-        [JsonProperty("age")] public string Age { get; set; }
-        [JsonProperty("estimatedAge")] public bool EstimatedAge { get; set; } = false;
+        [JsonPropertyName("age")] public string Age { get; set; }
+        [JsonPropertyName("estimatedAge")] public bool EstimatedAge { get; set; } = false;
 
-        [JsonProperty("dob")] public DateTime? DOB { get; set; }
+        [JsonPropertyName("dob")] public DateTime? DOB { get; set; }
 
-        [JsonProperty("sex")] public string Sex { get; set; } = " ";
+        [JsonPropertyName("sex")] public string Sex { get; set; } = " ";
 
-        [JsonProperty("gender")] public string Gender { get; set; } = "   ";
+        [JsonPropertyName("gender")] public string Gender { get; set; } = "   ";
         
-        [JsonProperty("race")] public string Race { get; set; } = " ";
+        [JsonPropertyName("race")] public string Race { get; set; } = " ";
 
-        [JsonProperty("ethnicity")] public string Ethnicity { get; set; } = " ";
+        [JsonPropertyName("ethnicity")] public string Ethnicity { get; set; } = " ";
 
-        [JsonProperty("residentStatus")] public string ResidentStatus { get; set; } = " ";
+        [JsonPropertyName("residentStatus")] public string ResidentStatus { get; set; } = " ";
 
-        [JsonProperty("aggravatedAssault")] public List<int> AggravatedAssault { get; set; } = new List<int>();
+        [JsonPropertyName("aggravatedAssault")] public List<int> AggravatedAssault { get; set; } = new List<int>();
 
-        [JsonProperty("additionalHomicide")] public string AdditionalHomicide { get; set; } = " ";
+        [JsonPropertyName("additionalHomicide")] public string AdditionalHomicide { get; set; } = " ";
 
-        [JsonProperty("precipitatingOffense")] public string PrecipitatingOffense { get; set; } = "   ";
+        [JsonPropertyName("precipitatingOffense")] public string PrecipitatingOffense { get; set; } = "   ";
 
-        [JsonProperty("officerActivity")] public int? OfficerActivity { get; set; }
+        [JsonPropertyName("officerActivity")] public int? OfficerActivity { get; set; }
 
-        [JsonProperty("officerAssignmentType")] public string OfficerAssignmentType { get; set; } = " ";
+        [JsonPropertyName("officerAssignmentType")] public string OfficerAssignmentType { get; set; } = " ";
 
-        [JsonProperty("officerOri")] public string OfficerOri { get; set; } = "         ";
+        [JsonPropertyName("officerOri")] public string OfficerOri { get; set; } = "         ";
 
-        [JsonProperty("injuryType")] public string InjuryType { get; set; } = " ";
+        [JsonPropertyName("injuryType")] public string InjuryType { get; set; } = " ";
         
-        [JsonProperty("relatedOffenders")] public List<VicOff> RelatedOffenders { get; set; }
+        [JsonPropertyName("relatedOffenders")] public List<VicOff> RelatedOffenders { get; set; }
         
         public Victim()
         {
@@ -91,7 +91,7 @@ namespace LibrsModels.Classes
 
         public string PadVictimAge(string age)
         {
-            if (age.IsNullBlankOrEmpty()) return "".PadR(3);
+            if (string.IsNullOrWhiteSpace(age)) return "".PadR(3);
             // If estimated, pad 3 characters
             if (age.Contains('E'))
             {

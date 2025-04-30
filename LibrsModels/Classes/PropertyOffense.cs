@@ -1,16 +1,17 @@
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class PropertyOffense : LegacyLibrsValues, IPaddingFixer
     {
 
-        [JsonProperty("propertySequenceNumber")]
+        [JsonPropertyName("propertySequenceNumber")]
         public int? PropertySequenceNumber { get; set; }
 
-        [JsonProperty("offenseSequenceNumber")]
+        [JsonPropertyName("offenseSequenceNumber")]
         public int? OffenseSequenceNumber { get; set; }
 
         [JsonIgnore]

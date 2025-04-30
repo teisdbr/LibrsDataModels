@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using NibrsModels.NibrsReport.Item;
 using NibrsModels.NibrsReport.Person;
 using NibrsModels.NibrsReport.Subject;
@@ -28,27 +29,27 @@ namespace LibrsModels.Classes
 
         #region IRootValidationObject Implementation
         
-        [JsonProperty("spec")]
+        [JsonPropertyName("spec")]
         string IRootValidationObject<ILibrsIncident>.Spec { get; set; }
         
-        [JsonProperty("ori")]
+        [JsonPropertyName("ori")]
         string IRootValidationObject<ILibrsIncident>.Ori { get; set; }
-        [JsonProperty("reportYear")]
+        [JsonPropertyName("reportYear")]
         int IRootValidationObject<ILibrsIncident>.ReportYear { get; set; }
-        [JsonProperty("reportMonth")]
+        [JsonPropertyName("reportMonth")]
         int IRootValidationObject<ILibrsIncident>.ReportMonth { get; set; }
 
         public string AgencyName { get; set; }
         public string SoftwareID { get; set; }
         public string SoftwareVersion { get; set; }
 
-        [JsonProperty("forSubmission")]
+        [JsonPropertyName("forSubmission")]
         bool IRootValidationObject<ILibrsIncident>.ForSubmission { get; set; } // False for now
         // api/jsonValidator?validateOnly=true
-        [JsonProperty("incidentList")]
+        [JsonPropertyName("incidentList")]
         List<ILibrsIncident> IRootValidationObject<ILibrsIncident>.IncidentList { get; set; }
 
-        [JsonProperty("zeroReport")]
+        [JsonPropertyName("zeroReport")]
         bool IRootValidationObject<ILibrsIncident>.ZeroReport { get; set; }
 
         #endregion

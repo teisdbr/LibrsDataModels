@@ -1,30 +1,31 @@
-using Newtonsoft.Json;
+using System.Text.Json;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class Offense : LegacyLibrsValues, IPaddingFixer
     {
-        [JsonProperty("offenseSeqNum")] public int? OffenseSeqNum { get; set; }
+        [JsonPropertyName("offenseSeqNum")] public int? OffenseSeqNum { get; set; }
 
-        [JsonProperty("isCompleted")] public bool IsCompleted { get; set; }
+        [JsonPropertyName("isCompleted")] public bool IsCompleted { get; set; }
 
-        [JsonProperty("offConnectToVic")] public int? OffConnectToVic { get; set; }
+        [JsonPropertyName("offConnectToVic")] public int? OffConnectToVic { get; set; }
 
-        [JsonProperty("locationType")] public int? LocationType { get; set; }
+        [JsonPropertyName("locationType")] public int? LocationType { get; set; }
 
-        [JsonProperty("premises")] public int? Premises { get; set; }
+        [JsonPropertyName("premises")] public int? Premises { get; set; }
 
-        [JsonProperty("methodOfEntry")] public string MethodOfEntry { get; set; } = " ";
+        [JsonPropertyName("methodOfEntry")] public string MethodOfEntry { get; set; } = " ";
 
-        [JsonProperty("criminalActivity")] public List<string> CriminalActivity { get; set; } = new List<string>();
+        [JsonPropertyName("criminalActivity")] public List<string> CriminalActivity { get; set; } = new List<string>();
 
-        [JsonProperty("weapons")] public List<Weapon> Weapons { get; set; } = new List<Weapon>();
+        [JsonPropertyName("weapons")] public List<Weapon> Weapons { get; set; } = new List<Weapon>();
 
-        [JsonProperty("cargoTheft")] public bool? CargoTheft { get; set; }
+        [JsonPropertyName("cargoTheft")] public bool? CargoTheft { get; set; }
 
-        [JsonProperty("agencyAssignedNibrs")] public string AgencyAssignedNibrs { get; set; } = "   ";
+        [JsonPropertyName("agencyAssignedNibrs")] public string AgencyAssignedNibrs { get; set; } = "   ";
 
         [JsonIgnore]
         public List<RelationshipsToProperty> RelationshipsToProperties { get; set; }
@@ -32,7 +33,7 @@ namespace LibrsModels.Classes
         [JsonIgnore]
         public List<RelatedProperty> RelatedProperties { get; set; }
         
-        [JsonProperty("propertyLossTypeFlags")]
+        [JsonPropertyName("propertyLossTypeFlags")]
         public int? PropertyLossTypeFlags { get; set; }
         
         [JsonIgnore]
@@ -41,7 +42,7 @@ namespace LibrsModels.Classes
         [JsonIgnore]
         public List<FbiValidate> FbiValidates { get; set; }
 
-        [JsonProperty("lrsNumber")] public string LrsNumber { get; set; } = "            ";
+        [JsonPropertyName("lrsNumber")] public string LrsNumber { get; set; } = "            ";
 
         [JsonIgnore] public bool OfficerDidAssignNibrs { get; set; } = true;
 
@@ -76,13 +77,13 @@ namespace LibrsModels.Classes
 
     public class Weapon
     {
-        [JsonProperty("weaponForce")] public int? WeaponForce { get; set; }
+        [JsonPropertyName("weaponForce")] public int? WeaponForce { get; set; }
         
-        [JsonProperty("automatic")] public bool? AutomaticFirearm { get; set; }
+        [JsonPropertyName("automatic")] public bool? AutomaticFirearm { get; set; }
 
-        [JsonProperty("stolenFirearm")] public bool? StolenFirearm { get; set; }
+        [JsonPropertyName("stolenFirearm")] public bool? StolenFirearm { get; set; }
 
-        [JsonProperty("dischargedFirearm")] public bool? DischargedFirearm { get; set; }
+        [JsonPropertyName("dischargedFirearm")] public bool? DischargedFirearm { get; set; }
 
     }
 }

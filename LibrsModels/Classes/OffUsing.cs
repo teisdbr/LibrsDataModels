@@ -1,15 +1,16 @@
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class OffUsing : LegacyLibrsValues, IPaddingFixer
     {
 
-        [JsonProperty("offenderSeqNum")] public string OffenderSeqNum { get; set; } = "   ";
+        [JsonPropertyName("offenderSeqNum")] public string OffenderSeqNum { get; set; } = "   ";
 
-        [JsonProperty("offUsingGaming")] public List<string> OffUsingGaming { get; set; }
+        [JsonPropertyName("offUsingGaming")] public List<string> OffUsingGaming { get; set; }
         
         public OffUsing()
         {

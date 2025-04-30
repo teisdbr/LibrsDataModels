@@ -1,5 +1,6 @@
-using Newtonsoft.Json;
+using System.Text.Json;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
@@ -36,76 +37,76 @@ namespace LibrsModels.Classes
 
     public class LibrsIncident : ILibrsIncident, IPaddingFixer
     {
-        [JsonProperty("actionType")]
+        [JsonPropertyName("actionType")]
         public string ActionType { get; set; }
         
-        [JsonProperty("incidentNumber")]
+        [JsonPropertyName("incidentNumber")]
         public string IncidentNumber { get; set; }
         
-        [JsonProperty("hasErrors")]
+        [JsonPropertyName("hasErrors")]
         public bool HasErrors { get; set; }
         
-        [JsonProperty("errors")]
+        [JsonPropertyName("errors")]
         public List<Error> Errors { get; set; }
         
-        [JsonProperty("warnings")]
+        [JsonPropertyName("warnings")]
         public List<Warning> Warnings { get; set; }
 
-        [JsonProperty("admin")] public Admin Admin { get; set; }
+        [JsonPropertyName("admin")] public Admin Admin { get; set; }
 
-        [JsonProperty("adminMod")]
+        [JsonPropertyName("adminMod")]
         public AdminMod AdminMod { get; set; }
 
-        [JsonProperty("offense")]
+        [JsonPropertyName("offense")]
         public List<Offense> Offense { get; set; }
         
-        [JsonProperty("propertySeg")]
+        [JsonPropertyName("propertySeg")]
         public PropertySeg PropertySeg { get; set; }
         
-        [JsonProperty("propDesc")]
+        [JsonPropertyName("propDesc")]
         public List<PropDesc> PropDesc { get; set; }
         
-        [JsonProperty("propMod")]
+        [JsonPropertyName("propMod")]
         public PropMod PropMod { get; set; }
         
-        [JsonProperty("propertyOffense")]
+        [JsonPropertyName("propertyOffense")]
         public List<PropertyOffense> PropertyOffense { get; set; }
         
-        [JsonProperty("offender")]
+        [JsonPropertyName("offender")]
         public List<Offender> Offender { get; set; }
         
         // This is no longer in use in LIBRS, but I've left it here in case
         // it's helpful to someone later down the line.
-        // [JsonProperty("offUsing")]
+        // [JsonPropertyName("offUsing")]
         // public List<OffUsing> OffUsing { get; set; }
         
-        [JsonProperty("victim")]
+        [JsonPropertyName("victim")]
         public List<Victim> Victim { get; set; }
         
         // This is also no longer used in the JSON Model for LIBRS, but if it's
         // valuable to someone down the line, have at.
-        // [JsonProperty("vicInjury")]
+        // [JsonPropertyName("vicInjury")]
         // public List<VicInjury> VicInjury { get; set; }
         
-        //[JsonProperty("vicOff")]
+        //[JsonPropertyName("vicOff")]
         //public List<VicOff> VicOff { get; set; }
         
-        [JsonProperty("arrestee")]
+        [JsonPropertyName("arrestee")]
         public List<Arrestee> Arrestee { get; set; }
 
-        //[JsonProperty("arrArm")]
+        //[JsonPropertyName("arrArm")]
         //public List<ArrArm> ArrArm { get; set; }
 
-        //[JsonProperty("arrStatute")]
+        //[JsonPropertyName("arrStatute")]
         //public List<ArrStatute> ArrStatute { get; set; }
         
-        [JsonProperty("arrMod")]
+        [JsonPropertyName("arrMod")]
         public ArrMod ArrMod { get; set; }
         
-        [JsonProperty("inchoate")]
+        [JsonPropertyName("inchoate")]
         public bool Inchoate { get; set; }
         
-        [JsonProperty("propertyLossTypeFlags")]
+        [JsonPropertyName("propertyLossTypeFlags")]
         public object PropertyLossTypeFlags { get; set; }
 
         [JsonIgnore]

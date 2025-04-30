@@ -1,51 +1,52 @@
-using Newtonsoft.Json;
+using System.Text.Json;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class AssociatedOffenses: LegacyLibrsValues
     {
         
-        [JsonProperty("offenseSeqNum")]
+        [JsonPropertyName("offenseSeqNum")]
         public string OffenseSeqNum { get; set; }
         
-        [JsonProperty("attemptedCompleted")]
+        [JsonPropertyName("attemptedCompleted")]
         public string AttemptedCompleted { get; set; }
         
-        [JsonProperty("offConnecttoVic")]
+        [JsonPropertyName("offConnecttoVic")]
         public string OffConnecttoVic { get; set; }
         
-        [JsonProperty("locationType")]
+        [JsonPropertyName("locationType")]
         public string LocationType { get; set; }
         
-        [JsonProperty("premises")]
+        [JsonPropertyName("premises")]
         public string Premises { get; set; }
         
-        [JsonProperty("methodOfEntry")]
+        [JsonPropertyName("methodOfEntry")]
         public string MethodOfEntry { get; set; }
         
-        [JsonProperty("criminalActivity1")]
+        [JsonPropertyName("criminalActivity1")]
         public string CriminalActivity1 { get; set; }
         
-        [JsonProperty("criminalActivity2")]
+        [JsonPropertyName("criminalActivity2")]
         public string CriminalActivity2 { get; set; }
         
-        [JsonProperty("criminalActivity3")]
+        [JsonPropertyName("criminalActivity3")]
         public string CriminalActivity3 { get; set; }
         
-        [JsonProperty("weaponForce1")]
+        [JsonPropertyName("weaponForce1")]
         public string WeaponForce1 { get; set; }
         
-        [JsonProperty("weaponForce2")]
+        [JsonPropertyName("weaponForce2")]
         public string WeaponForce2 { get; set; }
         
-        [JsonProperty("weaponForce3")]
+        [JsonPropertyName("weaponForce3")]
         public string WeaponForce3 { get; set; }
         
-        [JsonProperty("agencyAssignedNibrs")]
+        [JsonPropertyName("agencyAssignedNibrs")]
         public string AgencyAssignedNibrs { get; set; } 
         
-        [JsonProperty("propertyLossTypeFlags")]
+        [JsonPropertyName("propertyLossTypeFlags")]
         public int PropertyLossTypeFlags { get; set; }
 
         [JsonIgnore]
@@ -60,16 +61,16 @@ namespace LibrsModels.Classes
         [JsonIgnore]
         public List<FbiValidate> FbiValidates { get; set; }
         
-        [JsonProperty("lrsNumber")]
+        [JsonPropertyName("lrsNumber")]
         public string LrsNumber { get; set; }
         
-        [JsonProperty("officerDidAssignNibrs")]
+        [JsonPropertyName("officerDidAssignNibrs")]
         public bool OfficerDidAssignNibrs { get; set; }
         
-        [JsonProperty("inchoate")]
+        [JsonPropertyName("inchoate")]
         public string Inchoate { get; set; }
         
-        [JsonProperty("offenseGroup")]
+        [JsonPropertyName("offenseGroup")]
         public string OffenseGroup { get; set; }
         
     }

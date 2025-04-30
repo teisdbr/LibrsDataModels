@@ -1,4 +1,5 @@
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Collections.Generic;
 
 
@@ -8,10 +9,10 @@ namespace LibrsModels.Classes
         {
 
         
-        [JsonProperty("propertySequenceNumber")]
+        [JsonPropertyName("propertySequenceNumber")]
         public string PropertySequenceNumber { get; set; }
         
-        [JsonProperty("offenseSequenceNumber")]
+        [JsonPropertyName("offenseSequenceNumber")]
         public string OffenseSequenceNumber { get; set; }
 
         [JsonIgnore]

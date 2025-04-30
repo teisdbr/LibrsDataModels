@@ -1,5 +1,6 @@
 using System.Linq;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
@@ -8,10 +9,10 @@ namespace LibrsModels.Classes
 
         [JsonIgnore] public string VictimSeqNum { get; set; }
 
-        [JsonProperty("offenderNumber")]
+        [JsonPropertyName("offenderNumber")]
         public string OffenderNumberRelated { get; set; } = "   ";
 
-        [JsonProperty("relationship")]
+        [JsonPropertyName("relationship")]
         public string VictimOffenderRelation { get; set; } = "  ";
         
         public VicOff()

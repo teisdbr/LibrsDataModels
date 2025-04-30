@@ -1,26 +1,27 @@
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class FbiValidate
     {
         
-        [JsonProperty("mandatory")]
+        [JsonPropertyName("mandatory")]
         public string Mandatory { get; set; }
         
-        [JsonProperty("dataElement")]
+        [JsonPropertyName("dataElement")]
         public string DataElement { get; set; }
         
-        [JsonProperty("requirement")]
+        [JsonPropertyName("requirement")]
         public string Requirement { get; set; }
         
-        [JsonProperty("subgroup")]
+        [JsonPropertyName("subgroup")]
         public string Subgroup { get; set; }
         
-        [JsonProperty("crimeAgainst")]
+        [JsonPropertyName("crimeAgainst")]
         public string CrimeAgainst { get; set; }
         
-        [JsonProperty("expirationDate")]
+        [JsonPropertyName("expirationDate")]
         public string ExpirationDate { get; set; }
     }
 }

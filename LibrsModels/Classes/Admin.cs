@@ -1,33 +1,34 @@
 using System;
 using System.Linq;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class Admin : LegacyLibrsValues, IPaddingFixer
     {
-        [JsonProperty("location")] public string Location { get; set; } = "            ";
+        [JsonPropertyName("location")] public string Location { get; set; } = "            ";
 
-        [JsonProperty("stationID")] public string StationID { get; set; } = "      ";
+        [JsonPropertyName("stationID")] public string StationID { get; set; } = "      ";
 
         /// <summary>
         /// Stores the incident date or incident reported date as indicated by IsReportingDate property
         /// </summary>
-        [JsonProperty("incidentDate")]
+        [JsonPropertyName("incidentDate")]
         public DateTime? IncidentDate { get; set; }
 
         /// <summary>
         /// Indicates whether or not the incident date provided in this object is actually the reporting date.
         /// The default value is false.
         /// </summary>
-        [JsonProperty("isReportingDate")]
+        [JsonPropertyName("isReportingDate")]
         public bool IsReportingDate { get; set; }
 
-        [JsonProperty("clearedExceptionally")] public string ClearedExceptionally { get; set; } = "N";
+        [JsonPropertyName("clearedExceptionally")] public string ClearedExceptionally { get; set; } = "N";
 
-        [JsonProperty("excpClearDate")] public DateTime? ExcpClearDate { get; set; }
+        [JsonPropertyName("excpClearDate")] public DateTime? ExcpClearDate { get; set; }
 
-        [JsonProperty("cargoTheft")] public bool? CargoTheft { get; set; }
+        [JsonPropertyName("cargoTheft")] public bool? CargoTheft { get; set; }
 
         [JsonIgnore] public bool HasGroupAOffense { get; set; }
 

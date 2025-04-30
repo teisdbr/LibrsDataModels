@@ -1,15 +1,16 @@
-using Newtonsoft.Json;
+using System.Text.Json;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class RelationshipsToOffenses : LegacyLibrsValues
         {
         
-        [JsonProperty("propertySequenceNumber")]
+        [JsonPropertyName("propertySequenceNumber")]
         public string PropertySequenceNumber { get; set; }
         
-        [JsonProperty("offenseSequenceNumber")]
+        [JsonPropertyName("offenseSequenceNumber")]
         public string OffenseSequenceNumber { get; set; }
 
 

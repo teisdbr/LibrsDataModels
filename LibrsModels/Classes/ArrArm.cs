@@ -1,14 +1,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using LibrsModels.Classes;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class ArrArm : LegacyLibrsValues, IPaddingFixer
     {
 
-        [JsonProperty("arrestArmedWith")] public List<Weapon> ArrestArmedWith { get; set; } = new List<Weapon>();
+        [JsonPropertyName("arrestArmedWith")] public List<Weapon> ArrestArmedWith { get; set; } = new List<Weapon>();
         public ArrArm()
         {
             SegmentDescriptor = "61";

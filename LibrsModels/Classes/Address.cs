@@ -1,18 +1,19 @@
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class Address
     {
-        [JsonProperty("street")] public string Street { get; set; }
+        [JsonPropertyName("street")] public string Street { get; set; }
 
-        [JsonProperty("city")] public string City { get; set; }
+        [JsonPropertyName("city")] public string City { get; set; }
 
-        [JsonProperty("state")] public string State { get; set; }
+        [JsonPropertyName("state")] public string State { get; set; }
 
-        [JsonProperty("zip")] public int? Zip { get; set; }
+        [JsonPropertyName("zip")] public int? Zip { get; set; }
 
-        [JsonProperty("zipExt")] public int? ZipExt { get; set; }
+        [JsonPropertyName("zipExt")] public int? ZipExt { get; set; }
 
         public override string ToString()
         {

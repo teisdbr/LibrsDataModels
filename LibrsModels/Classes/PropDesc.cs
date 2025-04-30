@@ -1,29 +1,30 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class PropDesc : LegacyLibrsValues, IPaddingFixer
     {
 
-        [JsonProperty("propertySeqNum")] public int? PropertySeqNum { get; set; }
-        [JsonProperty("propertyLossType")] public int? PropertyLossType { get; set; }
+        [JsonPropertyName("propertySeqNum")] public int? PropertySeqNum { get; set; }
+        [JsonPropertyName("propertyLossType")] public int? PropertyLossType { get; set; }
 
-        [JsonProperty("propertyDescription")] public int? PropertyDescription { get; set; }
+        [JsonPropertyName("propertyDescription")] public int? PropertyDescription { get; set; }
 
-        [JsonProperty("propertyValue")] public int? PropertyValue { get; set; }
+        [JsonPropertyName("propertyValue")] public int? PropertyValue { get; set; }
 
-        [JsonProperty("dateRecovered")] public DateTime? DateRecovered { get; set; }
+        [JsonPropertyName("dateRecovered")] public DateTime? DateRecovered { get; set; }
 
-        [JsonProperty("suspectedDrugType")] public string SuspectedDrugType { get; set; } = " ";
+        [JsonPropertyName("suspectedDrugType")] public string SuspectedDrugType { get; set; } = " ";
 
-        [JsonProperty("counterfeitDrug")] public bool CounterfeitDrug { get; set; } = false;
+        [JsonPropertyName("counterfeitDrug")] public bool CounterfeitDrug { get; set; } = false;
 
-        [JsonProperty("estimatedDrugQty")] public decimal? EstimatedDrugQty { get; set; }
+        [JsonPropertyName("estimatedDrugQty")] public decimal? EstimatedDrugQty { get; set; }
 
-        [JsonProperty("typeDrugMeas")] public string TypeDrugMeas { get; set; } = "  ";
+        [JsonPropertyName("typeDrugMeas")] public string TypeDrugMeas { get; set; } = "  ";
         
         [JsonIgnore]
         public object ty_num { get; set; }

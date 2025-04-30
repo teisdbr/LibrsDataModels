@@ -1,19 +1,20 @@
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class Warning
     {
-        [JsonProperty("errorCode")]
+        [JsonPropertyName("errorCode")]
         public int ErrorCode { get; set; }
         
-        [JsonProperty("errorMsg")]
+        [JsonPropertyName("errorMsg")]
         public string ErrorMsg { get; set; }
         
-        [JsonProperty("contents")]
+        [JsonPropertyName("contents")]
         public string Contents { get; set; }
         
-        [JsonProperty("dataElem")]
+        [JsonPropertyName("dataElem")]
         public string DataElem { get; set; }
 
     }

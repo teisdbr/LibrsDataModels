@@ -1,13 +1,14 @@
 using System.Linq;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     public class PropertySeg: LegacyLibrsValues, IPaddingFixer
     {
-        [JsonProperty("numOfStolenVehicles")] public int? NumOfStolenVehicles { get; set; }
+        [JsonPropertyName("numOfStolenVehicles")] public int? NumOfStolenVehicles { get; set; }
 
-        [JsonProperty("numOfRecoveredVehicles")]
+        [JsonPropertyName("numOfRecoveredVehicles")]
         public int? NumOfRecoveredVehicles { get; set; }
         
         public PropertySeg()

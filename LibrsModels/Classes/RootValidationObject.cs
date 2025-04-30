@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
@@ -9,25 +10,25 @@ namespace LibrsModels.Classes
 {
     public class RootValidationObject : IPaddingFixer, IRootValidationObject<LibrsIncident>
     {
-        [JsonProperty("spec")] public string Spec { get; set; }
+        [JsonPropertyName("spec")] public string Spec { get; set; }
 
-        [JsonProperty("ori")] public string Ori { get; set; }
+        [JsonPropertyName("ori")] public string Ori { get; set; }
 
-        [JsonProperty("reportYear")] public int ReportYear { get; set; }
+        [JsonPropertyName("reportYear")] public int ReportYear { get; set; }
 
-        [JsonProperty("reportMonth")] public int ReportMonth { get; set; }
+        [JsonPropertyName("reportMonth")] public int ReportMonth { get; set; }
 
-        [JsonProperty("agencyName")] public string AgencyName { get; set; }
+        [JsonPropertyName("agencyName")] public string AgencyName { get; set; }
 
-        [JsonProperty("softwareId")] public string SoftwareID { get; set; }
+        [JsonPropertyName("softwareId")] public string SoftwareID { get; set; }
 
-        [JsonProperty("softwareVersion")] public string SoftwareVersion { get; set; }
+        [JsonPropertyName("softwareVersion")] public string SoftwareVersion { get; set; }
 
-        [JsonProperty("forSubmission")] public bool ForSubmission { get; set; }
+        [JsonPropertyName("forSubmission")] public bool ForSubmission { get; set; }
 
-        [JsonProperty("zeroReport")] public bool ZeroReport { get; set; }
+        [JsonPropertyName("zeroReport")] public bool ZeroReport { get; set; }
 
-        [JsonProperty("incidentList")] public List<LibrsIncident> IncidentList { get; set; }
+        [JsonPropertyName("incidentList")] public List<LibrsIncident> IncidentList { get; set; }
 
         public void FixPaddings()
         {

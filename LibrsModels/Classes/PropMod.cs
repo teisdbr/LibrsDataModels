@@ -1,13 +1,13 @@
 using System.Linq;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LibrsModels.Classes
 {
     //This one is a work in progress... Don't really know what goes in here. 
     public class PropMod : LegacyLibrsValues
     {
-        [JsonProperty("lrsNumber")]
+        [JsonPropertyName("lrsNumber")]
         public string LRSNumber { get; set; }
         
         public PropMod()

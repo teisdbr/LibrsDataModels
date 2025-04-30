@@ -1,30 +1,31 @@
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 namespace LibrsModels.Classes
 {
     public class LegacyLibrsValues
     {
-        [JsonProperty("entireLineSegment")]
+        [JsonPropertyName("entireLineSegment")]
         public string EntireLineSegment { get; set; }
 
-        [JsonProperty("segmentDescriptor")]
+        [JsonPropertyName("segmentDescriptor")]
         public string SegmentDescriptor { get; set; }
 
-        [JsonProperty("actionType")]
+        [JsonPropertyName("actionType")]
         public string ActionType { get; set; }
 
-        [JsonProperty("oriNumber")]
+        [JsonPropertyName("oriNumber")]
         public string ORINumber { get; set; }
 
-        [JsonProperty("incidentNumber")]
+        [JsonPropertyName("incidentNumber")]
         public string IncidentNumber { get; set; }
 
-        [JsonProperty("expansionBuffer")]
+        [JsonPropertyName("expansionBuffer")]
         public string ExpansionBuffer { get; set; }
 
-        [JsonProperty("segmentEnd")]
+        [JsonPropertyName("segmentEnd")]
         public string SegmentEnd = "ZZ";
 
-        [JsonProperty("padding")]
+        [JsonPropertyName("padding")]
         public string Padding { get; set; }
     }
 }
