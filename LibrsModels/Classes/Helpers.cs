@@ -1,5 +1,4 @@
 ﻿using System;
-using NibrsModels.Extensions;
 
 namespace LibrsModels.Classes
 {
@@ -12,7 +11,7 @@ namespace LibrsModels.Classes
                 return numeric.ToString().PadLeft(length, paddingCharacter);
             }
 
-            if (!property.IsNullBlankOrEmpty()) return property.PadLeft(length, paddingCharacter);
+            if (!string.IsNullOrWhiteSpace(property)) return property.PadLeft(length, paddingCharacter);
             property = property ?? "";
             return property.PadLeft(length, defaultChar);
         }
