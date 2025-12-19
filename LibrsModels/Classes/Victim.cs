@@ -62,7 +62,7 @@ namespace LibrsModels.Classes
 
         [JsonProperty("officerOri")] public string OfficerOri { get; set; } = "         ";
 
-        [JsonProperty("injuryType")] public string InjuryType { get; set; } = " ";
+        [JsonProperty("injuryType")] public List<string> InjuryType { get; set; } = new List<string>();
         
         [JsonProperty("relatedOffenders")] public List<VicOff> RelatedOffenders { get; set; }
         
