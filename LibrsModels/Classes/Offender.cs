@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
-using NibrsModels.Extensions;
 
 namespace LibrsModels.Classes
 {
@@ -46,7 +45,7 @@ namespace LibrsModels.Classes
 
         public string PadOffenderAge(string age)
         {
-            if (age.IsNullBlankOrEmpty()) return "".PadR(3);
+            if (string.IsNullOrWhiteSpace(age)) return "".PadR(3);
             if (age.Contains('E'))
             {
                 return age.PadL(3, '0');
